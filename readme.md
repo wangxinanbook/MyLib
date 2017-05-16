@@ -2,3 +2,6 @@
 
 
 ### A fun project to learn git
+
+
+Email me @ wangxinanbook@gmail.com
