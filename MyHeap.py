@@ -7,8 +7,8 @@ class MyHeap:
     self.mycmp = mycmp
     self.map = dict()
   
-  def heapify(self,data,ids):
-    self.n = len(data)
+  def heapify(self,data,ids,n):
+    self.n = n
     self.arr = [(x,xid) for (x,xid) in zip(data,ids)]
     for i in range(self.n):
       self.map[self.arr[i][1]] = i  # id -> i 
@@ -18,7 +18,7 @@ class MyHeap:
 
   def pop(self):
     
-    res = self.arr[0][0]
+    res = self.arr[0]
     del self.map[self.arr[0][1]]
     self.n -= 1
 
@@ -43,16 +43,17 @@ class MyHeap:
 
 
   def update(self,x,xid):
-    if self.count(xid)>0:
+    if xid in self.map:
       i = self.map[xid]
       old = self.arr[i][0]
       self.arr[i] = (x,xid)
       if self.mycmp(x,old):
-        percolateUp(i)
+        self.percolateUp(i)
       elif self.mycmp(old,x):
-        percolateDown(i)
+        self.percolateDown(i)
     else:
-      self.add(x,xid)
+      #self.add(x,xid)
+      pass
 
 
   def percolateDown(self,i):
