@@ -90,19 +90,20 @@ class TreapTree:
     self._display(node.right,s+'\t')
 
 
-tree = TreapTree()
-data = [5,7,2,6,7,9,10,1,5,6,7,3,9]
+if __name__ == "__main__":
+  tree = TreapTree()
+  data = [5,7,2,6,7,9,10,1,5,6,7,3,9]
 
-for x in data:
-  tree.insert(x)
+  for x in data:
+    tree.insert(x)
 
-tree.display()
-print '=' * 10
-tree.remove(5)
-tree.display()
-print '=' * 10
-tree.remove(5)
-tree.display()
-print '=' * 10
-tree.remove(3)
-tree.display()
+  tree.display()
+  print '=' * 10
+  tree.remove(5)
+  tree.display()
+  print '=' * 10
+  tree.remove(5)
+  tree.display()
+  print '=' * 10
+  tree.remove(3)
+  tree.display()
